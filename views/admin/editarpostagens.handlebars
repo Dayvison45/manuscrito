@@ -1,0 +1,116 @@
+{{#each erros}}
+<p class="alert alert-danger">{{texto}}</p>
+{{else}}
+{{/each}}
+<div class="topnav">
+  <a class="active" href="/admin/home/{{usuario._id}}">Home</a>
+  <a href="/admin/embreve/{{usuario._id}}">News</a>
+  <a href="/admin/perfil/{{usuario._id}}">Perfil</a>
+  <a href="/admin/sobre/{{usuario._id}}">About</a>
+</div>
+
+
+<section>
+<div >
+
+</div>
+<div>
+  <h2>seja bem vindo {{usuario.nome}}</h2>
+
+<h1 >Manuscritos</h1>
+ 
+  <form action="/admin/editado/{{postagens._id}}/{{usuario._id}}" method="post">
+<input type="hidden" name="myid" value="{{usuario._id}}">
+  <input type="hidden" name="autor" value="{{usuario.nome}}">
+    <input placeholder="titulo" value="{{postagens.titulo}}" name="titulo" type="text" id="titulo">
+  <textarea required="required" placeholder="descricao" name="descricao" id="descricao" >{{postagens.descricao}}</textarea>
+  <input required="required" class="btn btn-primary"  value="enviar edição" type="submit"></form>
+
+
+</div>
+
+</section>
+
+<style>
+
+  
+  .com{width: 100%;
+  border: 4px solid blue;}
+.nome{
+  background-color: lightslategrey;
+  margin-top: 20px;
+  width: 100%;
+text-align: center;
+color: rgb(0, 4, 255);
+border: 3px solid blue
+}
+.title{font-size: x-large}
+.coment{font-size: larger}
+.date{inline-size: 200px;
+display: inline-flex;
+height: 20px;
+overflow: hidden}
+
+@import url('https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap');
+#titulo{width: 100%;}
+textarea{ resize: vertical;
+  width: 100%;
+  height: auto;
+}
+
+.user{
+  position: sticky;
+top: 0px;
+
+}
+h1{ text-align: center;
+    color: #00b5ec;
+    font-family: 'Neonderthaw', cursive;
+}
+
+
+
+section{display: grid;
+width: 100%;
+height: 100%;
+grid-template-columns: 1fr 4fr;
+
+
+
+}
+div{text-align: center;}
+
+    /* Add a black background color to the top navigation */
+.topnav {
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #00b5ec;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: rgb(0, 0, 0);
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #00e1ff;
+  color: rgb(6, 91, 189);
+}
+footer{
+  margin-bottom: 0px;
+  position: fixed;}
+</style>
+
+
+<footer>&copy;Dayvison Network</footer>

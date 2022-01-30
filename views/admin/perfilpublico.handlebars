@@ -1,0 +1,65 @@
+<button class="btn btn-success" onclick="history.back()">Go Back</button>
+<h1>Ola {{usuario.nome}}</h1>
+<div class="card text-center">
+  <div class="card-header"> É UM PRAZER TERMOS VOCÊ CONOSCO</div>
+  <div class="card-footer text-muted">
+    Bem Vindo Ao Manuscrito  </div></div>
+<h2>Suas Postagens
+</h2>
+{{#each postagens}}
+ <p class="nome">{{dono}}</p>
+  <nav class='com'>
+    <p class='title'>{{titulo}}
+    <p class='coment'>{{descricao}}</p></nav>
+  <p class = 'date'>{{data}}  </p>
+ 
+{{else}}
+{{/each}}
+<style>
+  h1{text-align: center;}
+  h2{text-align: center;}
+    input{justify-content: center;}
+       /* Add a black background color to the top navigation */
+.topnav {
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #00b5ec;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: rgb(0, 0, 0);
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #00e1ff;
+  color: rgb(6, 91, 189);
+}
+ .com{width: 100%;
+  border: 4px solid blue;}
+.nome{
+  background-color: lightslategrey;
+ 
+  width: 100%;
+text-align: center;
+color: rgb(0, 4, 255);
+border: 3px solid blue
+}
+.title{font-size: x-large}
+.coment{font-size: larger}
+.date{inline-size: 200px;
+display: inline-flex;
+height: 20px;
+overflow: hidden}
+</style>

@@ -1,0 +1,91 @@
+<div class="topnav">
+  <a class="active" href="/admin/home/{{usuario._id}}">Home</a>
+  <a href="/admin/embreve/{{usuario._id}}">News</a>
+  <a href="/admin/perfil/{{usuario._id}}">Perfil</a>
+  <a href="/admin/sobre/{{usuario._id}}">About</a>
+</div>
+
+
+<h1>Ola {{usuario.nome}}</h1>
+
+<div class="card text-center">
+  <div class="card-header">
+    É UM PRAZER TERMOS VOCÊ CONOSCO
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">SEUS DADOS</h5>
+ <p>nome:{{usuario.nome}}</p> <br><br>
+    <p>senha:{{usuario.senha}}</p><br><br>
+   <a href="/admin/logout/{{usuario._id}}">
+     <p>sair <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+       <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
+       <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+     </svg>  </p>
+   </a>
+
+       <a href="/admin/perfileditar/{{usuario._id}}"><button>editar</button></a> <a href="/admin/excluirusuario/{{usuario._id}}"><button>excluir</button></a>
+  </div>
+  <div class="card-footer text-muted">
+    Bem Vindo Ao Manuscrito  </div>
+</div>
+
+<h2>Suas Postagens
+</h2>
+{{#each postagens}}
+ <p class="nome">{{dono}}</p>
+  <nav class='com'>
+    <p class='title'>{{titulo}}
+    <p class='coment'>{{descricao}}</p>
+  </nav>
+  <p class = 'date'>{{data}}  </p>
+  <a  href="/admin/editar/{{_id}}"><input type="button" value="editar" ></a> <a href="/admin/excluir/{{_id}}/{{dono}}"><input type="button" value="excluir"></a>  
+{{else}}
+{{/each}}
+<style>
+  h1{text-align: center;}
+  h2{text-align: center;}
+    input{justify-content: center;}
+       /* Add a black background color to the top navigation */
+.topnav {
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #00b5ec;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: rgb(0, 0, 0);
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #00e1ff;
+  color: rgb(6, 91, 189);
+}
+ .com{width: 100%;
+  border: 4px solid blue;}
+.nome{
+  background-color: lightslategrey;
+ 
+  width: 100%;
+text-align: center;
+color: rgb(0, 4, 255);
+border: 3px solid blue
+}
+.title{font-size: x-large}
+.coment{font-size: larger}
+.date{inline-size: 200px;
+display: inline-flex;
+height: 20px;
+overflow: hidden}
+</style>

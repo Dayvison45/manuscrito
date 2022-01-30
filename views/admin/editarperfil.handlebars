@@ -1,0 +1,64 @@
+{{#each erros}}
+<p class="alert alert-danger">{{texto}}</p>
+{{else}}
+{{/each}}
+
+<div class="topnav">
+  <a class="active" href="/admin/home/{{usuario._id}}">Home</a>
+  <a href="/admin/embreve/{{usuario._id}}">News</a>
+  <a href="/admin/perfil/{{usuario._id}}">Perfil</a>
+  <a href="/admin/sobre/{{usuario._id}}">About</a>
+</div>
+
+
+<h1>OLA {{usuario.nome}}</h1>
+
+<div class="card text-center">
+  <div class="card-header">
+    É UM PRAZER TERMOS VOCÊ CONOSCO
+  </div>
+  <form action="/admin/editarperfil/{{usuario._id}}" method="post">
+      <div class="card-body">
+        <h5 class="card-title">SEUS DADOS</h5>
+       <label for="nome">nome:</label><input required="required" type="text" name="nome" value="{{usuario.nome}}" id="nome"><br><br>
+      <label for="nome">senha:</label><input required="required" type="text" name="senha" value="{{usuario.senha}}" id="senha"><br><br>
+      
+  <input type="submit" value="editar ">
+  </form>
+
+  </div>
+  <div class="card-footer text-muted">
+   
+  </div>
+</div>
+
+<style>
+    input{justify-content: center;}
+       /* Add a black background color to the top navigation */
+.topnav {
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #00b5ec;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: rgb(0, 0, 0);
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #00e1ff;
+  color: rgb(6, 91, 189);
+}
+</style>
